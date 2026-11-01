@@ -1,38 +1,10 @@
 # Directorio Dolorense (TDD) - API local en Node + app Flutter
 
-```
-directorio_dolores/
-  api/server.js     <- la "cocina": API REST en Node (sin dependencias)
-  app/              <- app Flutter que consume la API
-```
-
-## 1. Encender la API (Terminal 1)
-
-    cd api
-    node server.js
-
-Debe decir: `API lista en http://localhost:3000/negocios`. Dejala abierta.
-Prueba rapida en el navegador: http://localhost:3000/negocios
-
-## 2. Preparar la app (Terminal 2)
-
-    cd app
-    flutter create . --project-name directorio_dolores --platforms=android,web
-    flutter pub get
-    flutter test --reporter expanded      # deben pasar 19 en verde
-
-## 3. Android: permitir HTTP (solo desarrollo)
-
-En `app/android/app/src/main/AndroidManifest.xml` agrega el permiso arriba de
-`<application` y el atributo `android:usesCleartextTraffic="true"` dentro de `<application`:
-
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <application
-        android:usesCleartextTraffic="true"
-        ...>
-
-## 4. Correr la app (con la API encendida)
-
     flutter run -d edge                                          # web
     flutter run                                                  # emulador Android (usa 10.0.2.2)
     flutter run --dart-define=API_URL=http://TU-IP:3000          # celular real
+# Imagenes
+<img width="921" height="368" alt="image" src="https://github.com/user-attachments/assets/a7452bef-37a1-4d3d-b9cb-9272fdb622fa" />
+<img width="921" height="384" alt="image" src="https://github.com/user-attachments/assets/d4b18e9c-f0f8-4766-9d07-78367c6cad16" />
+<img width="921" height="675" alt="image" src="https://github.com/user-attachments/assets/30bdcd2e-ff09-4f9f-9d0d-2a11177cb267" />
+<img width="921" height="67" alt="image" src="https://github.com/user-attachments/assets/b5a763d5-8b5d-4fed-932f-23e97f803069" />
